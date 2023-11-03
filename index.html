@@ -7,11 +7,11 @@
         function getIP(json) {
             var ip = json.ip;
             // 使用ip-api.com查询地理信息
-            var url = "https://ip-api.com/json/" + ip;
+            var url = "https://app.ipdatacloud.com/v2/free_query?ip=" + ip;
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
-                    if (data.countryCode === "CN") {
+                    if (data.data.country === "CN") {
                         // 如果是中国大陆用户，则重定向到指定网址
                         window.location.href = "https://aigetired-1305125924.cos-website.ap-shanghai.myqcloud.com";
                     } else {
