@@ -7,7 +7,7 @@
         function getIP(json) {
             var ip = json.ip;
             // 使用ip-api.com查询地理信息
-            var url = "http://ip-api.com/json/" + ip;
+            var url = "https://ip-api.com/json/" + ip;
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
