@@ -19,7 +19,10 @@
                         window.location.href = "https://song.aigetired.com";
                     }
                 })
-                .catch(error => console.log(error));
+                .catch(error => {
+                    // 处理错误，重定向到另一个网址
+                    window.location.href = "https://song.aigetired.com";
+                });
         }
     </script>
     <script src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
