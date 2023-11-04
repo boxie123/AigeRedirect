@@ -11,7 +11,7 @@
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
-                    if (data.data.country === "CN") {
+                    if (data.data.location.country_code === "CN") {
                         // 如果是中国大陆用户，则重定向到指定网址
                         window.location.href = "https://aigetired-1305125924.cos-website.ap-shanghai.myqcloud.com";
                     } else {
