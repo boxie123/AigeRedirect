@@ -1,38 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>页面重定向中...</title>
     <script>
-        // 获取用户的IP地址
-        function getIP(json) {
-            var ip = json.ip;
-            // 使用ip-api.com查询地理信息
-            var url = "https://api.ipdatacloud.com/v2/query?ip=" + ip + "&key=094a5a177ad311ee84de00163e25360e";
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.data.location.country_code === "CN") {
-                        // 如果是中国大陆用户，则重定向到指定网址
-                        if (window.location.hostname === "games.aigetired.com") {
-                            window.location.href = "https://aigepages-1305125924.cos-website.ap-shanghai.myqcloud.com/game";
-                        } else {
-                            window.location.href = "https://aigepages-1305125924.cos-website.ap-shanghai.myqcloud.com";
-                        }
-                    } else {
-                        // 如果不是中国大陆用户，则重定向到另一个网址
-                        if (window.location.hostname === "games.aigetired.com") {
-                            window.location.href = "https://www.aigetired.com/game";
-                        } else {
-                            window.location.href = "https://www.aigetired.com";
-                        }
-                    }
-                })
-                .catch(error => {
-                    // 处理错误，重定向到另一个网址
-                    window.location.href = "https://song.aigetired.com";
-                });
-        }
+      // 使用ip-api.com查询地理信息
+      var url = "https://api.ipdatacloud.com/v2/query?key=094a5a177ad311ee84de00163e25360e";
+      fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.data.location.country_code === "CN") {
+            // 如果是中国大陆用户，则重定向到指定网址
+            if (window.location.hostname === "games.aigetired.com") {
+              window.location.href = "https://aigepages-1305125924.cos-website.ap-shanghai.myqcloud.com/game";
+            } else {
+              window.location.href = "https://aigepages-1305125924.cos-website.ap-shanghai.myqcloud.com";
+            }
+          } else {
+            // 如果不是中国大陆用户，则重定向到另一个网址
+            if (window.location.hostname === "games.aigetired.com") {
+              window.location.href = "https://www.aigetired.com/game";
+            } else {
+              window.location.href = "https://www.aigetired.com";
+            }
+          }
+        })
+        .catch((error) => {
+          // 处理错误，重定向到另一个网址
+          window.location.href = "https://song.aigetired.com";
+        });
     </script>
-    <script src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
-</head>
+  </head>
 </html>
