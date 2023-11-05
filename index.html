@@ -13,14 +13,14 @@
                 .then(data => {
                     if (data.data.location.country_code === "CN") {
                         // 如果是中国大陆用户，则重定向到指定网址
-                        if (window.location.hostname === "game.aigetired.com") {
+                        if (window.location.hostname === "games.aigetired.com") {
                             window.location.href = "https://aigepages-1305125924.cos-website.ap-shanghai.myqcloud.com/game";
                         } else {
                             window.location.href = "https://aigepages-1305125924.cos-website.ap-shanghai.myqcloud.com";
                         }
                     } else {
                         // 如果不是中国大陆用户，则重定向到另一个网址
-                        if (window.location.hostname === "game.aigetired.com") {
+                        if (window.location.hostname === "games.aigetired.com") {
                             window.location.href = "https://www.aigetired.com/game";
                         } else {
                             window.location.href = "https://www.aigetired.com";
